@@ -42,13 +42,3 @@ jobs:
         run:
       
           python3 ../flaskapp/some_app.py
-
-language: python
-
-install:
-
-  -pip3 install flask
-
-script:
-
-  -python3 ../flaskapp/some_app.py
