@@ -1,3 +1,48 @@
+name: TRAVIS
+
+on:
+
+  push:
+
+    branches:
+
+      - master
+
+  pull_request:
+
+    brancges:
+
+      - master
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+
+        uses: action/checkout@v2
+
+        with:
+
+          python-version: '3.8'
+
+      - name: Install dependecies
+
+        run:
+
+          pip3 install flask
+
+      - name: Run tests
+
+        run:
+      
+          python3 ../flaskapp/some_app.py
+
 language: python
 
 install:
