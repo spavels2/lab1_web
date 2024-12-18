@@ -30,7 +30,7 @@ jobs:
         run:  chmod +x flaskapp/st.sh
 
       - name: Run the script
-        run:
+        run: |
           cd flaskapp
           ./st.sh
 
