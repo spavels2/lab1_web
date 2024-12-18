@@ -35,6 +35,6 @@ jobs:
           cd flaskapp
           ./st.sh
 
-     # - name: Run tests
-      #  run:
-       #   python flaskapp/some_app.py
+      - name: Run tests
+        run:
+          python flaskapp/some_app.py
