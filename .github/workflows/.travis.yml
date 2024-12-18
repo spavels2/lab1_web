@@ -1,44 +1,39 @@
 name: TRAVIS
 
 on:
-
   push:
-
     branches:
-
       - master
-
   pull_request:
-
     brancges:
-
       - master
-
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/checkout@v2
         with:
-
           python-version: '3.8'
 
       - name: Install dependecies
-
         run:
-
           pip install flask
+          pip install gunicorn
+
+      - name: Make script executable
+        run:  chmod +x flaskapp/st.sh
+
+      - name: Run the script
+        run:
+          cd flaskapp
+          ./st.sh
 
       - name: Run tests
-
         run:
-
           python flaskapp/some_app.py
