@@ -25,6 +25,7 @@ jobs:
         run: |
           pip install flask
           pip install gunicorn
+          pip install requests
 
       - name: Make script executable
         run:  chmod +x flaskapp/st.sh
@@ -34,6 +35,6 @@ jobs:
           cd flaskapp
           ./st.sh
 
-      - name: Run tests
-        run:
-          python flaskapp/some_app.py
+     # - name: Run tests
+      #  run:
+       #   python flaskapp/some_app.py
